@@ -2,4 +2,4 @@ project: argos3
 target: argos3
 
 cmds:
-  - cmd: /repo/src/build/core/argos3 --config-file @@
+  - cmd: /argos3 --config-file @@
