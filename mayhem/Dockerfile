@@ -8,7 +8,7 @@ WORKDIR /repo/src/build
 RUN cmake ..
 RUN make -j8
 RUN cp /repo/src/build/core/config.h /repo/src/argos3/core/
-RUN clang++ /repo/mayhem/fuzz.cpp -fsanitize=fuzzer,address -I/repo/src/ -o /fuzz
+RUN clang++ /repo/mayhem/fuzz_square.cpp -fsanitize=fuzzer,address -I/repo/src/ -o /fuzz
 
 FROM ubuntu:22.04 as package
-COPY --from=builder /fuzz /fuzz
+COPY --from=builder /fuzz /fuzz_square
