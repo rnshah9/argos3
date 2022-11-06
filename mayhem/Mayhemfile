@@ -1,5 +1,5 @@
 project: argos3
-target: argos3
+target: square
 
 cmds:
-  - cmd: /argos3 --config-file @@
+  - cmd: /fuzz_square
