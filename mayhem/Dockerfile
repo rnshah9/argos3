@@ -12,3 +12,6 @@ RUN clang++ /repo/mayhem/fuzz_square.cpp -fsanitize=fuzzer,address -I/repo/src/ 
 
 FROM ubuntu:22.04 as package
 COPY --from=builder /fuzz /fuzz_square
+COPY --from=builder /repo/src/build/core/argos3 /
+COPY --from=builder /repo/src/build/core/libargos3core_simulator.so /deps/
+ENV LD_LIBRARY_PATH=/deps
