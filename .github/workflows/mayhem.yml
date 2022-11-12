@@ -51,7 +51,8 @@ jobs:
       fail-fast: false
       matrix:
         mayhemfile:
-          - mayhem/Mayhemfile
+          - mayhem/Mayhemfile_argos3
+          - mayhem/Mayhemfile_square
 
     steps:
       - uses: actions/checkout@v2
